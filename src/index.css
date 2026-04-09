@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-bg-mint: #eef7f2;
+  --color-text: #1a1a1b;
+  --color-text-muted: #666666;
+  
+  /* Accent Colors from Figma */
+  --highlight-yellow: #ffec99; /* Underline */
+  --highlight-pink: #fcc2d7;   /* Doers bubble */
+  --highlight-purple: #d0bfff; /* Changing bubble */
+  --highlight-green: #c3fae8;  /* Status Quo bubble */
+  --highlight-orange: #ffc078; /* Progress yellow highlight */
+
+  --font-main: 'Outfit', sans-serif;
+  
+  --spacing-container: 1200px;
+  --radius-pill: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px; /* Adjust based on header height */
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Figma Specific Highlight Components */
+.pill-highlight {
+  display: inline-block;
+  padding: 0 1rem;
+  border-radius: var(--radius-pill);
+  transform: rotate(-1deg);
+  margin: 0 0.1em;
+}
+
+.pill-pink { background-color: var(--highlight-pink); color: #000; }
+.pill-purple { background-color: var(--highlight-purple); color: #000; }
+.pill-green { background-color: var(--highlight-green); color: #000; }
+
+.underline-yellow {
+  position: relative;
+  z-index: 1;
+}
+
+.underline-yellow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  width: 100%;
+  height: 0.3em;
+  background-color: var(--highlight-yellow);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.underline-orange {
+  position: relative;
+  z-index: 1;
+}
+
+.underline-orange::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.15em;
+  width: 100%;
+  height: 0.15em;
+  background-color: var(--highlight-orange);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* Buttons */
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-black:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.read-more::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: #000;
+  margin-left: 10px;
+}
+
+.scroll-next {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-text {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  .container { padding: 0 1.5rem; }
+}
