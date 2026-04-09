@@ -1,0 +1,105 @@
+.testimonials {
+  padding: 8rem 0;
+  background-color: var(--color-bg);
+  overflow: visible;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.testimonials-header h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.testimonials-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-avatars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.testimonial-avatar {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Specific Positions for Floating Avatars */
+.t-avatar-1 { top: 0; left: 10%; width: 50px; height: 50px; }
+.t-avatar-2 { top: 20%; left: -5%; width: 70px; height: 70px; }
+.t-avatar-3 { bottom: 10%; left: 15%; width: 80px; height: 80px; }
+.t-avatar-4 { top: 10%; right: 10%; width: 55px; height: 55px; }
+.t-avatar-5 { top: 40%; right: -5%; width: 65px; height: 65px; }
+.t-avatar-6 { bottom: 5%; right: 20%; width: 90px; height: 90px; }
+
+.quote-bubble {
+  background: #f8f9fa; /* Light gray bubble from Figma */
+  padding: 4rem 5rem;
+  border-radius: 40px;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.03);
+  z-index: 2;
+}
+
+.quote-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.quote-marks {
+  position: absolute;
+  font-size: 5rem;
+  color: #dee2e6;
+  font-family: serif;
+  line-height: 1;
+}
+
+.quote-marks.left {
+  top: 2rem;
+  left: 1.5rem;
+}
+
+.quote-marks.right {
+  bottom: 0.5rem;
+  right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .testimonials-header h2 { font-size: 2.5rem; }
+  .quote-bubble { padding: 3rem 2rem; border-radius: 24px; }
+  .floating-avatars-container { display: none; }
+}

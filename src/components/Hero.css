@@ -1,0 +1,106 @@
+.hero {
+  padding: 10rem 0 6rem;
+  overflow: visible;
+  position: relative;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4rem;
+}
+
+.hero-header {
+  max-width: 900px;
+}
+
+.hero-header h1 {
+  font-size: 4.8rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Avatar Arc */
+.avatar-arc {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 250px;
+  margin-top: 2rem;
+}
+
+.avatar-item {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+}
+
+.avatar-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Specific Positions to mimic Figma arc */
+.avatar-1 { bottom: 10px; left: 5%; width: 70px; height: 70px; }
+.avatar-2 { bottom: 60px; left: 15%; width: 85px; height: 85px; }
+.avatar-3 { top: 0; left: 30%; width: 75px; height: 75px; }
+.avatar-4 { bottom: 0; left: 45%; width: 90px; height: 90px; }
+.avatar-5 { top: 20px; right: 30%; width: 80px; height: 80px; }
+.avatar-6 { bottom: 70px; right: 15%; width: 75px; height: 75px; }
+.avatar-7 { bottom: 0; right: 5%; width: 85px; height: 85px; }
+
+/* Decorative */
+.hero-blob {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 80px;
+  height: 80px;
+  background: var(--highlight-purple);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.hero-swirl {
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  z-index: -1;
+}
+
+@media (max-width: 1024px) {
+  .hero-header h1 { font-size: 3.5rem; }
+  .avatar-arc { transform: scale(0.8); }
+}
+
+@media (max-width: 768px) {
+  .hero-header h1 { font-size: 2.5rem; }
+  .avatar-arc { 
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    position: static;
+    transform: none;
+  }
+  .avatar-item { position: static; }
+}
